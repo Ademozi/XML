@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ms:superette
+    xmlns:ms="http://www.masuperette.com"
+    xmlns:ion="http://www.ions.com">
+    
+    <ms:bottle capacity="150"> <!-- I think the barcode is the one who must be here !  -->
+        <ms:source>IFRI</ms:source>
+        <PH status="equal">7</PH>
+        <ion:ions>
+            <ion:positive>
+                <ion:calcium unit="mg/l">70</ion:calcium>
+                <ion:magnesium unit="mg/l">5</ion:magnesium>
+            </ion:positive>
+            <ion:negative>
+                <ion:chlorides unit="mg/l">20</ion:chlorides>
+                <ion:nitrates unit="mg/l">1</ion:nitrates>
+            </ion:negative>
+        </ion:ions>
+        <ms:barcode>3057640117008</ms:barcode>
+    </ms:bottle>
+    
+    <ms:bottle capacity="100"> <!-- I think the barcode is the one who must be here !  -->
+        <ms:source>GUEDILA</ms:source>
+        <PH status="above">7.2</PH>
+        <ion:ions>
+            <ion:positive>
+                <ion:calcium unit="mg/l">98</ion:calcium>
+                <ion:magnesium unit="mg/l">4</ion:magnesium>
+            </ion:positive>
+            <ion:negative>
+                <ion:chlorides unit="mg/l">3.6</ion:chlorides>
+                <ion:nitrates unit="mg/l">2</ion:nitrates>
+            </ion:negative>
+        </ion:ions>
+        <ms:barcode>3268840001008</ms:barcode>
+    </ms:bottle>
+    
+    <ms:bottle capacity="100"> <!-- I think the barcode is the one who must be here !  -->
+        <ms:source>LALA KHADIDJA</ms:source>
+        <PH status="equal">7</PH>
+        <ion:ions>
+            <ion:positive>
+                <ion:calcium unit="mg/l">11.5</ion:calcium>
+                <ion:magnesium unit="mg/l">8</ion:magnesium>
+            </ion:positive>
+            <ion:negative>
+                <ion:chlorides unit="mg/l">13.5</ion:chlorides>
+                <ion:nitrates unit="mg/l">6.5</ion:nitrates>
+            </ion:negative>
+        </ion:ions>
+        <ms:barcode>3274080005003</ms:barcode>
+    </ms:bottle>
+</ms:superette>

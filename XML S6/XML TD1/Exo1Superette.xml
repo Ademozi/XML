@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE superette [
+<!ELEMENT superette (bottle+)>
+<!ELEMENT bottle (source, PH, ions,barcode)>
+<!ATTLIST bottle 
+            capacity CDATA #REQUIRED>
+            
+<!ELEMENT source (#PCDATA)>
+
+<!ELEMENT PH (#PCDATA)>
+<!ATTLIST PH status ( equal | above | below ) #REQUIRED>
+
+<!ELEMENT ions (positive, negative)>
+
+<!ELEMENT positive (calcium, magnesium)>
+<!ELEMENT negative (chlorides, nitrates)>
+
+<!ELEMENT calcium (#PCDATA)>
+<!ATTLIST calcium 
+            unit CDATA #REQUIRED>
+
+<!ELEMENT magnesium (#PCDATA)>
+<!ATTLIST magnesium 
+            unit CDATA #REQUIRED>
+            
+<!ELEMENT chlorides (#PCDATA)>
+<!ATTLIST chlorides 
+            unit CDATA #REQUIRED>
+            
+<!ELEMENT nitrates (#PCDATA)>
+<!ATTLIST nitrates 
+            unit CDATA #REQUIRED>
+
+<!ELEMENT barcode (#PCDATA)>
+]>
+
+<superette>
+    <bottle capacity="150"> <!-- I think the barcode is the one who must be here !  -->
+        <source>IFRI</source>
+        <PH status="equal">7</PH>
+        <ions>
+            <positive>
+                <calcium unit="mg/l">70</calcium>
+                <magnesium unit="mg/l">5</magnesium>
+            </positive>
+            <negative>
+                <chlorides unit="mg/l">20</chlorides>
+                <nitrates unit="mg/l">1</nitrates>
+            </negative>
+        </ions>
+        <barcode>3057640117008</barcode>
+    </bottle>
+    
+    <bottle capacity="100"> <!-- I think the barcode is the one who must be here !  -->
+        <source>GUEDILA</source>
+        <PH status="above">7.2</PH>
+        <ions>
+            <positive>
+                <calcium unit="mg/l">98</calcium>
+                <magnesium unit="mg/l">4</magnesium>
+            </positive>
+            <negative>
+                <chlorides unit="mg/l">3.6</chlorides>
+                <nitrates unit="mg/l">2</nitrates>
+            </negative>
+        </ions>
+        <barcode>3268840001008</barcode>
+    </bottle>
+    
+    <bottle capacity="100"> <!-- I think the barcode is the one who must be here !  -->
+        <source>LALA KHADIDJA</source>
+        <PH status="equal">7</PH>
+        <ions>
+            <positive>
+                <calcium unit="mg/l">11.5</calcium>
+                <magnesium unit="mg/l">8</magnesium>
+            </positive>
+            <negative>
+                <chlorides unit="mg/l">13.5</chlorides>
+                <nitrates unit="mg/l">6.5</nitrates>
+            </negative>
+        </ions>
+        <barcode>3274080005003</barcode>
+    </bottle>
+</superette>
