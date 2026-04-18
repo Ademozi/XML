@@ -1,1 +1,42 @@
-.
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bibliography
+    xmlns="http://si.dz/serie2/exercice1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://si.dz/serie2/exercice1 Exo1Bibliography.xsd">
+    
+    <authors>
+        <author code="A1">
+            <lastname>Robert</lastname>
+            <firstname>Greene</firstname>
+            <birthdate>1990-05-05</birthdate>
+            <website>robertgreene.com</website>
+        </author>
+        
+        <author code="A2">
+            <lastname>John</lastname>
+            <firstname>Doe</firstname>
+            <birthdate>1985-05-05</birthdate>
+            <website>johndoe.com</website>
+        </author>
+    </authors>
+    
+    <documents>
+        
+        <!-- BOOK -->
+        <book>
+            <title subtitle="English">48 Laws of Power</title>
+            <authorcodes>
+                <authorcode>A1</authorcode>
+            </authorcodes>
+                <volume nbpage="200"/>
+                <volume nbpage="180" subtitle="Part 2"/>
+            <edition>
+                <publisher>Penguin</publisher>
+                <ISBN>12345678</ISBN>
+                <year>2001</year>
+            </edition>
+        </book>
+        
+    </documents>
+</bibliography>

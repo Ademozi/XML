@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE magasin[
+<!ELEMENT magasin (clients, commandes)>
+
+<!-- Clients -->
+<!ELEMENT clients (client*)>
+<!ELEMENT client (nom, prenom, dateNaissance, (telephone | email))>
+<!ATTLIST client clientID CDATA #IMPLIED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT dateNaissance (#PCDATA)>
+<!ELEMENT telephone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!-- commandes -->
+<!ELEMENT commandes (commande*)>
+<!ELEMENT commande (clientID, dateCommande, dateLivraison, article)>
+<!ELEMENT clientID (#PCDATA)>
+<!ELEMENT dateCommande (#PCDATA)>
+<!ELEMENT dateLivraison (#PCDATA)>
+<!ELEMENT article (#PCDATA)>
+
+]>
+
+<!-- smallest valid XML document -->
+<!--
+<magasin>
+    <clients/>
+    <commandes/>
+</magasin>
+-->
+
+<!-- smallest valid XML document containong all elements-->
+<magasin>
+    <clients>
+        <client>
+            <nom>Cristiano</nom>
+            <prenom>Ronaldo</prenom>
+            <dateNaissance>1985-02-05</dateNaissance>
+            <email>cr7.cristiano@gmail.com</email>
+        </client>
+    </clients>
+    <commandes>
+        <commande>
+            <clientID>12345678</clientID>
+            <dateCommande>1999-02-05</dateCommande>
+            <dateLivraison>1999-02-09</dateLivraison>
+            <article>Soulier</article>
+        </commande>
+    </commandes>
+</magasin>

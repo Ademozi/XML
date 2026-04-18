@@ -1,1 +1,139 @@
-.
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://si.dz/serie2/exercice1"
+    xmlns="http://si.dz/serie2/exercice1"
+    elementFormDefault="qualified">
+    
+    <xs:element name="bibliography">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="authors">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="author" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="lastname" type="xs:string"/>
+                                        <xs:element name="firstname" type="xs:string"/>
+                                        <xs:element name="birthdate" type="xs:date"/>
+                                        <xs:element name="website" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="code" type="xs:ID" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="documents">
+                    <xs:complexType>
+                        <xs:choice maxOccurs="unbounded">
+                            <xs:element name="book">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="title">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="subtitle" type="xs:string" use="optional"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="authorcodes">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="authorcode" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="volume" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="nbpage" type="xs:string" use="required"/>
+                                                <xs:attribute name="subtitle" type="xs:string" use="optional"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="edition">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="publisher" type="xs:string"/>
+                                                    <xs:element name="ISBN" type="xs:string"/>
+                                                    <xs:element name="year" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="article">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="title">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="subtitle" type="xs:string" use="optional"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="authorcodes">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="authorcode" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="journal">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="pageNb" type="xs:string"/>
+                                                    <xs:element name="year" type="xs:string"/>
+                                                    <xs:element name="journalNumber" type="xs:string"/>
+                                                </xs:sequence>
+                                                <xs:attribute name="journalName" type="xs:string" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="diseration">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="title">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="subtitle" type="xs:string" use="optional"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="authorcodes">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="authorcode" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="university" type="xs:string"/>
+                                        <xs:element name="year" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="memo_type" use="optional">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="national"/>
+                                                <xs:enumeration value="international"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

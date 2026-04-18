@@ -46,3 +46,30 @@
 <!ATTLIST diseration
         memo_type (national | international) #IMPLIED>
 <!ELEMENT university (#PCDATA)>
+]>
+
+<bibliography>
+        
+        <authors>
+                <author code="A1">
+                        <lastname>Robert</lastname>
+                        <firstname>Greene</firstname>
+                        <birthdate>1990</birthdate>
+                        <website>robertgreene.com</website>
+                </author>
+        </authors>
+        <documents>
+                <book>
+                        <title>48 Laws of Power</title>
+                        <authorcodes>
+                                <authorcode>A1</authorcode>
+                        </authorcodes>
+                        <volume nbpage="400"/>
+                        <edition>
+                                <publisher>penguin</publisher>
+                                <ISBN>12345678</ISBN>
+                                <year>2001</year>
+                        </edition>
+                </book>
+        </documents>
+</bibliography>
