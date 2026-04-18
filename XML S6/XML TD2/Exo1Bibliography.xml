@@ -1,3 +1,48 @@
-.
+<?xml version="1.0" encoding="UTF-8"?>
 
+<!DOCTYPE bibliography[
+<!ELEMENT bibliography (authors, documents)>
 
+<!-- Authors -->   <!-- Authors codes -->
+<!ELEMENT authors (author+)>
+<!ELEMENT author (lastname, firstname, birthdate, website)>
+<!ATTLIST author
+        code ID #REQUIRED>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT birthdate (#PCDATA)>
+<!ELEMENT website (#PCDATA)>
+
+<!-- Documents -->
+<!ELEMENT documents (book | article | diseration)>
+
+<!-- Book -->
+<!ELEMENT book (title, authorcodes, volume, edition)>
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+        subtitle CDATA #IMPLIED>
+<!ELEMENT authorcodes (authorcode+)>
+<!ELEMENT authorcode (#PCDATA)>
+<!ELEMENT volumes (volume+)>
+<!ELEMENT volume EMPTY>
+<!ATTLIST volume
+        nbpage CDATA #REQUIRED
+        subtitle CDATA #IMPLIED>
+<!ELEMENT edition (publisher, ISBN, year)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+
+<!-- Article -->
+<!ELEMENT article (title, authorcodes, journal)>
+<!ELEMENT journal (pageNb, year, journalNumber)>
+<!ATTLIST journal 
+        journalName CDATA #REQUIRED>
+<!ELEMENT pageNb (#PCDATA)>
+<!ELEMENT journalNumber (#PCDATA)>
+
+<!-- Diseration -->
+<!ELEMENT diseration (title, authorcodes, university, year)>
+<!ATTLIST diseration
+        memo_type (national | international) #IMPLIED>
+<!ELEMENT university (#PCDATA)>

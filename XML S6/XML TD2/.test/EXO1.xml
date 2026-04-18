@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE bibliography [
+    <!ELEMENT bibliography (authors,document)>
+    
+    <!ELEMENT authors (author+)>
+    <!ELEMENT author (lastname,firstname,dateofbirth,website)>
+    <!ELEMENT lastname (#PCDATA)>
+    <!ELEMENT firstname (#PCDATA)>
+    <!ELEMENT dateofbirth (#PCDATA)>
+    <!ELEMENT website (#PCDATA)>
+    
+    <!ELEMENT document (book|article|dissertation)>
+    
+    <!ELEMENT book (title,authorcode,volumes,edition)>
+    <!ELEMENT title (#PCDATA)>
+    <!ATTLIST title 
+            subtitle CDATA #IMPLIED>
+    <!ELEMENT authorcode (#PCDATA)>
+    
+    <!ELEMENT edition (publisher,ISBNnum,year)>
+    <!ELEMENT publisher (#PCDATA)>
+    <!ELEMENT ISBNnum (#PCDATA)>
+    <!ELEMENT year (#PCDATA)>
+    <!ELEMENT volumes (volume+)>
+    <!ELEMENT volume EMPTY >
+    <!ATTLIST volume 
+       nbpage CDATA #REQUIRED
+       subtitle CDATA #IMPLIED >
+    
+    
+    <!ELEMENT article (title,authorcode,journal)>
+    
+    <!ELEMENT journal (pagenb,year,journalnum)>
+    <!ATTLIST journal 
+         journal_name CDATA #IMPLIED>
+    <!ELEMENT pagenb (#PCDATA)>
+    <!ELEMENT yearp (#PCDATA)>
+    <!ELEMENT journalnum (#PCDATA)>
+    
+    <!ELEMENT dissertation (title,authorcode,universty,year)>
+    <!ELEMENT universty (#PCDATA)>
+    <!ATTLIST dissertation 
+          memo_type (national|internationel) #IMPLIED>
+    
+]>
+<bibliography 
+    xmlns="http://si.dz/serie2/exercice1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://si.dz/serie2/exercice1 Untitled2.xsd">
+    <authors>
+        <author>
+            <lastname>shamso</lastname>
+            <firstname>hamadache</firstname>
+            <dateofbirth>2005-06-09</dateofbirth>
+            <website>www.chamssedine.com</website>
+        </author>
+    </authors>
+    <document>
+        <book>
+            <title subtitle="mancity is the best">my book</title>
+            <authorcode>232331210213</authorcode>
+            <volumes>
+                <volume nbpage="1" subtitle="nothing to show"/>
+            </volumes>
+            <edition>
+                <publisher>chamso</publisher>
+                <ISBNnum>20.3</ISBNnum>
+                <year>2025-10-10</year>
+            </edition>
+        </book>
+    </document>
+</bibliography>
